@@ -7,10 +7,12 @@ package Business.Role;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-import Business.Organization.DoctorOrganization;
+import Business.Network.Network;
 import Business.Organization.Organization;
+import Business.Organization.PatientOrganization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import userInterface.PatientRole.PatientWorkAreaJPanel;
 
 /**
  *
@@ -18,11 +20,15 @@ import javax.swing.JPanel;
  */
 public class PatientRole extends Role {
 
+    /*public PatientRole(){
+        setRoleType(roleType.Patient);
+    }*/
+
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new PatientWorkAreaJPanel(userProcessContainer, account, (DoctorOrganization)organization, enterprise);
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, Network network, EcoSystem business) {
+         return new PatientWorkAreaJPanel(userProcessContainer, account, (PatientOrganization)organization, enterprise);
     }
-    
+
     
     
 }

@@ -33,8 +33,8 @@ public class EnterpriseDirectory {
             enterprise = new CareTakerEnterprise(name);
             enterpriseList.add(enterprise);
         }
-        else if(type == Enterprise.EnterpriseType.Supplier){
-            enterprise = new SupplierEnterprise(name);
+        else if(type == Enterprise.EnterpriseType.Pharmacy){
+            enterprise = new PharmacyEnterprise(name);
             enterpriseList.add(enterprise);
         }
         return enterprise;

@@ -19,14 +19,14 @@ public abstract class Enterprise extends Organization{
     
     public Enterprise(String name, EnterpriseType type){
         super(name);
-        this.enterpriseType = enterpriseType;
+        this.enterpriseType = type;
         organizationDirectory = new OrganizationDirectory();
     }
     
     public enum EnterpriseType{
         Hospital("Hospital Enterprise"),
         CareTaker("Care Taker Enterprise"),
-        Supplier("Supplier Enterprise");
+        Pharmacy("Pharmacy Enterprise");
         
         private String value;
         

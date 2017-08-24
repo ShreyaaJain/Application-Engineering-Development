@@ -7,6 +7,7 @@
  */
 package Business.WorkQueue;
 
+import Business.Patient.Patient;
 import Business.UserAccount.UserAccount;
 import java.util.Date;
 
@@ -19,6 +20,8 @@ public abstract class WorkRequest {
     private String message;
     private UserAccount sender;
     private UserAccount reciever;
+    //private Patient patient;
+    private Patient patient;
     private String status;
     private Date requestDate;
     private Date resolveDate;
@@ -75,7 +78,20 @@ public abstract class WorkRequest {
     public void setResolveDate(Date resolveDate) {
         this.resolveDate = resolveDate;
     }
-    
-    
-    
+
+    /*public Patient getPatient() {
+        return patient;
+    }
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }*/
+
+    public Patient getPatient() {
+        return patient;
+    }
+
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }   
 }

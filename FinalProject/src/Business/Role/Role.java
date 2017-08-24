@@ -7,6 +7,7 @@ package Business.Role;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Network.Network;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
@@ -20,7 +21,7 @@ public abstract class Role {
     public enum RoleType {
 
         Admin("Admin"),
-        Patien("Patient"),
+        Patient("Patient"),
         Doctor("Doctor"),
         CareTaker("CareTaker"),
         Family("Family"),
@@ -40,11 +41,26 @@ public abstract class Role {
         public String toString() {
             return value;
         }
+        
     }
+    
+    RoleType roleType;
+
+    public RoleType getRoleType() {
+        return roleType;
+    }
+
+    public void setRoleType(RoleType roleType) {
+        this.roleType = roleType;
+    }
+    
+    
+   
         public abstract JPanel createWorkArea(JPanel userProcessContainer,
                 UserAccount account,
                 Organization organization,
                 Enterprise enterprise,
+                Network network,
                 EcoSystem business);
 
     @Override

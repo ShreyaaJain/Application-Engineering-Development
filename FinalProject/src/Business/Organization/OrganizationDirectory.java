@@ -41,10 +41,14 @@ public class OrganizationDirectory {
                 organizationList.add(organization);
                 }
         
-        else if(type.getValue().equals(Type.Supplier.getValue())){
-                organization = new SupplierOrganization();
+        else if(type.getValue().equals(Type.Pharmacy.getValue())){
+                organization = new PharmacyOrganization();
                 organizationList.add(organization);
                 }
+        else if(type.getValue().equals(Type.Patient.getValue())){
+            organization = new PatientOrganization();
+            organizationList.add(organization);
+        }
         
     return organization;
     }

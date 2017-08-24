@@ -5,6 +5,8 @@
 package Business.UserAccount;
 
 import Business.Employee.Employee;
+import Business.Patient.Patient;
+import Business.Patient.PatientDirectory;
 import Business.Role.Role;
 import Business.WorkQueue.WorkQueue;
 
@@ -19,10 +21,12 @@ public class UserAccount {
     private Employee employee;
     private Role role;
     private WorkQueue workQueue;
+    private PatientDirectory patientDirectory;
     
 
     public UserAccount() {
         workQueue = new WorkQueue();
+        patientDirectory = new PatientDirectory();
     }
     
     
@@ -63,7 +67,13 @@ public class UserAccount {
         return workQueue;
     }
 
-    
+    public PatientDirectory getPatientDirectory() {
+        return patientDirectory;
+    }
+
+    public void addPatient(Patient patient) {
+        patientDirectory.addPatient(patient);
+    }
     
     @Override
     public String toString() {
